@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Bahare Gallery</title>
+    <meta name="description" content="Get in touch for photography bookings, collaborations, and inquiries.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+    <link rel="manifest" href="../images/site.webmanifest">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <script src="../js/main.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+
+            <a href="../index.html" class="logo">
+                Bahare Gallery<span>.</span>
+            </a>
+
+            <ul class="nav-links" id="navigation-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" aria-current="page">Contact</a></li>
+            </ul>
+
+            <a href="contact.html" class="nav-cta">
+                Let's Talk <span aria-hidden="true">↗</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navigation-links"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <p class="eyebrow">LET'S CONNECT</p>
+            <h1>Let's create something <em>meaningful.</em></h1>
+            <p>
+                Have a project in mind, an event coming up, or simply want
+                to say hello? I'd love to hear from you.
+            </p>
+        </section>
+
+        <section class="contact-layout">
+
+            <div class="contact-details">
+                <p class="eyebrow">GET IN TOUCH</p>
+                <h2>Start a conversation.</h2>
+                <p class="contact-description">
+                    Tell me a little about what you're looking for.
+                    I'll get back to you as soon as I can.
+                </p>
+
+                <div class="contact-item">
+                    <span>Email</span>
+                    <a href="mailto:your-email@example.com">
+                        your-email@example.com
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <span>Phone / WhatsApp</span>
+                    <a href="https://wa.me/REPLACE_WITH_PHONE_NUMBER">
+                        Message me on WhatsApp
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <span>Instagram</span>
+                    <a href="https://instagram.com/REPLACE_WITH_USERNAME"
+                       target="_blank" rel="noopener noreferrer">
+                        @yourusername
+                    </a>
+                </div>
+
+                <div class="services-note">
+                    <h3>Available for</h3>
+                    <p>Portraits · Events · Lifestyle · Editorial · Collaborations</p>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <p class="eyebrow">YOUR MESSAGE</p>
+                <h2>Tell me about your project.</h2>
+
+                <form
+                    class="contact-form"
+                    action="https://formspree.io/f/YOUR_FORM_ID"
+                    method="POST"
+                >
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="name">Your name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Full name"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-field">
+                            <label for="email">Email address</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="service">What are you interested in?</label>
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>Select a service</option>
+                            <option value="Portrait photography">Portrait photography</option>
+                            <option value="Event photography">Event photography</option>
+                            <option value="Lifestyle photography">Lifestyle photography</option>
+                            <option value="Editorial photography">Editorial photography</option>
+                            <option value="Collaboration">Collaboration</option>
+                            <option value="Other">Something else</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="date">Preferred date (optional)</label>
+                        <input type="date" id="date" name="preferred_date">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="message">Tell me more</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            placeholder="Your idea, event details, location, or any questions..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        Send inquiry <span aria-hidden="true">↗</span>
+                    </button>
+
+                    <p class="form-note">
+                        Your details will only be used to respond to your inquiry.
+                    </p>
+                </form>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="container footer-content">
+
+            <a href="../index.html" class="logo">
+                Bahare Gallery<span>.</span>
+            </a>
+
+            <p>Creating photographs, preserving feelings.</p>
+
+            <div class="social-links">
+                <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Instagram
+                </a>
+
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <p class="copyright">
+                &copy; <span id="current-year">2026</span> Bahare Gallery.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

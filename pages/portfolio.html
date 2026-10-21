@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Explore a collection of portrait, nature, lifestyle, and event photography."
+    >
+
+    <title>Portfolio | Bahare Gallery</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+    <link rel="manifest" href="../images/site.webmanifest">
+
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/portfolio.css">
+
+    <script src="../js/main.js" defer></script>
+    <script src="../js/portfolio.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+
+            <a href="../index.html" class="logo">
+                Bahare Gallery<span>.</span>
+            </a>
+
+            <ul class="nav-links" id="navigation-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <a href="contact.html" class="nav-cta">
+                Let's Talk <span aria-hidden="true">↗</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navigation-links"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- PORTFOLIO INTRO -->
+        <section class="portfolio-hero container">
+            <p class="eyebrow">A COLLECTION OF MOMENTS</p>
+
+            <h1>
+                The art of<br>
+                <em>seeing differently.</em>
+            </h1>
+
+            <p>
+                Every photograph holds a story. Explore the people,
+                places, and moments that have inspired my work.
+            </p>
+        </section>
+
+
+        <!-- GALLERY -->
+        <section class="gallery-section container"
+                 aria-label="Photography gallery">
+
+            <div class="gallery-toolbar">
+
+                <div class="gallery-filters" aria-label="Filter photographs">
+                    <button class="filter-button is-active"
+                            type="button"
+                            data-filter="all"
+                            aria-pressed="true">
+                        All work
+                    </button>
+
+                    <button class="filter-button"
+                            type="button"
+                            data-filter="portrait"
+                            aria-pressed="false">
+                        Portraits
+                    </button>
+
+                    <button class="filter-button"
+                            type="button"
+                            data-filter="nature"
+                            aria-pressed="false">
+                        Nature
+                    </button>
+
+                    <button class="filter-button"
+                            type="button"
+                            data-filter="lifestyle"
+                            aria-pressed="false">
+                        Lifestyle
+                    </button>
+
+                    <button class="filter-button"
+                            type="button"
+                            data-filter="events"
+                            aria-pressed="false">
+                        Events
+                    </button>
+                </div>
+
+                <p class="gallery-count" aria-live="polite">
+                    <span id="visible-count">8</span> photographs
+                </p>
+
+            </div>
+
+
+            <div class="gallery-grid" id="gallery-grid">
+
+                <button class="gallery-item"
+                        type="button"
+                        data-category="portrait"
+                        data-full="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1800&q=90"
+                        data-alt="Woman photographed in soft natural light"
+                        aria-label="View portrait photograph">
+                    <img
+                        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+                        alt="Woman photographed in soft natural light"
+                        loading="lazy">
+                    <span class="gallery-item-caption">
+                        <span>Portraits</span>
+                        <span aria-hidden="true">↗</span>
+                    </span>
+                </button>
+
+
+                <button class="gallery-item"
+                        type="button"
+                        data-category="nature"
+                        data-full="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1800&q=90"
+                        data-alt="Peaceful mountain landscape reflected in a lake"
+                        aria-label="View nature photograph">
+                    <img
+                        src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80"
+                        alt="Peaceful mountain landscape reflected in a lake"
+                        loading="lazy">
+                    <span class="gallery-item-caption">
+                        <span>Nature</span>
+                        <span aria-hidden="true">↗</span>
+                    </span>
+                </button>
+
+
+                <button class="gallery-item"
+                        type="button"
+                        data-category="lifestyle"
+                        data-full="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=1800&q=90"
+                        data-alt="Friends sharing a joyful moment"
+                        aria-label="View lifestyle photograph">
+                    <img
+                        src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=80"
+                        alt="Friends sharing a joyful moment"
+                        loading="lazy">
+                    <span class="gallery-item-caption">
+                        <span>Lifestyle</span>
+                        <span aria-hidden="true">↗</span>
+                    </span>
+                </button>
+
+
+                <button class="gallery-item"
+                        type="button"
+                        data-category="portrait"
+                        data-full="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=1800&q=90"
+                        data-alt="Editorial portrait of a woman"
+                        aria-label="View editorial portrait">
+                    <img
+                        src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=800&q=80"
+                        alt="Editorial portrait of a woman"
+                        loading="lazy">
+                    <span class="gallery-item-caption">
+                        <span>Portraits</span>
+                        <span aria-hidden="true">↗</span>
+                    </span>
+                </button>
+
+
+                <button class="gallery-item"
+                        type="button"
+                        data-category="nature"
+                        data-full="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1800&q=90"
+                        data-alt="Sunlight filtering through a green forest"
+                        aria-label="View forest photograph">
+                    <img
+                        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80"
+                        alt="Sunlight filtering through a green forest"
+                        loading="lazy">
+                    <span class="gallery-item-caption">
+                        <span>Nature</span>
+                        <span aria-hidden="true">↗</span>
+                    </span>
+                </button>
+
+
+                <button class="gallery-item"
+                        type="button"
+                        data-category="events"
+                        data-full="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=90"
+                        data-alt="Elegant wedding celebration details"
+                        aria-label="View event photograph">
+                    <img
+                        src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+                        alt="Elegant wedding celebration details"
+                        loading="lazy">
+                    <span class="gallery-item-caption">
+                        <span>Events</span>
+                        <span aria-hidden="true">↗</span>
+                    </span>
+                </button>
+
+
+                <button class="gallery-item"
+                        type="button"
+                        data-category="lifestyle"
+                        data-full="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1800&q=90"
+                        data-alt="Natural lifestyle portrait"
+                        aria-label="View lifestyle portrait">
+                    <img
+                        src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80"
+                        alt="Natural lifestyle portrait"
+                        loading="lazy">
+                    <span class="gallery-item-caption">
+                        <span>Lifestyle</span>
+                        <span aria-hidden="true">↗</span>
+                    </span>
+                </button>
+
+
+                <button class="gallery-item"
+                        type="button"
+                        data-category="nature"
+                        data-full="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1800&q=90"
+                        data-alt="Wildlife in a natural landscape"
+                        aria-label="View wildlife photograph">
+                    <img
+                        src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=800&q=80"
+                        alt="Wildlife in a natural landscape"
+                        loading="lazy">
+                    <span class="gallery-item-caption">
+                        <span>Nature</span>
+                        <span aria-hidden="true">↗</span>
+                    </span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- LIGHTBOX -->
+        <dialog class="lightbox" id="lightbox"
+                aria-label="Enlarged photograph">
+
+            <button
+                class="lightbox-close"
+                id="lightbox-close"
+                type="button"
+                aria-label="Close enlarged photograph">
+                &times;
+            </button>
+
+            <button
+                class="lightbox-prev"
+                id="lightbox-prev"
+                type="button"
+                aria-label="Previous photograph">
+                &#8592;
+            </button>
+
+            <figure class="lightbox-figure">
+                <img id="lightbox-image" src="" alt="">
+                <figcaption id="lightbox-caption"></figcaption>
+            </figure>
+
+            <button
+                class="lightbox-next"
+                id="lightbox-next"
+                type="button"
+                aria-label="Next photograph">
+                &#8594;
+            </button>
+
+        </dialog>
+
+
+        <!-- CONTACT CTA -->
+        <section class="contact-section container">
+            <p class="eyebrow">HAVE A PROJECT IN MIND?</p>
+
+            <h2>
+                Your story deserves<br>
+                <em>to be remembered.</em>
+            </h2>
+
+            <p>
+                Let's talk about your ideas and create something meaningful.
+            </p>
+
+            <a href="contact.html" class="button button-primary">
+                Get in Touch <span aria-hidden="true">↗</span>
+            </a>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+
+            <a href="../index.html" class="logo">
+                Bahare Gallery<span>.</span>
+            </a>
+
+            <p>Creating photographs, preserving feelings.</p>
+
+            <div class="social-links">
+                <a href="https://www.instagram.com/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Instagram
+                </a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <p class="copyright">
+                &copy; <span id="current-year">2026</span> Bahare Gallery.
+                All rights reserved.
+            </p>
+
+        </div>
+    </footer>
+
+</body>
+</html>

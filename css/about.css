@@ -1,0 +1,257 @@
+
+/* ========================================
+   ABOUT HERO
+======================================== */
+
+.about-hero {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    align-items: center;
+    gap: clamp(50px, 9vw, 120px);
+    padding-block: 90px 110px;
+}
+
+.about-hero-content {
+    max-width: 560px;
+}
+
+.about-hero-content .eyebrow {
+    margin-bottom: 25px;
+}
+
+.about-hero-content h1 {
+    font-size: clamp(3.2rem, 6vw, 5.5rem);
+    margin-bottom: 25px;
+}
+
+.about-hero-content > p:not(.eyebrow) {
+    max-width: 450px;
+    color: var(--color-muted);
+    font-size: 0.96rem;
+    margin-bottom: 32px;
+}
+
+.about-hero-image {
+    position: relative;
+    padding-bottom: 28px;
+}
+
+.about-hero-image img {
+    aspect-ratio: 0.8;
+    max-height: 600px;
+}
+
+.photo-note {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10px 16px;
+    background: var(--color-bg);
+    color: var(--color-muted);
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-style: italic;
+}
+
+
+/* ========================================
+   PERSONAL STORY
+======================================== */
+
+.story-section {
+    background: var(--color-surface);
+    padding-block: 105px;
+}
+
+.story-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1fr;
+    gap: clamp(50px, 10vw, 130px);
+}
+
+.story-heading .eyebrow {
+    margin-bottom: 24px;
+}
+
+.story-heading h2 {
+    font-size: clamp(2.6rem, 4.5vw, 4rem);
+}
+
+.story-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.story-copy p {
+    color: var(--color-muted);
+    font-size: 0.94rem;
+    line-height: 2;
+}
+
+
+/* ========================================
+   PHOTOGRAPHY PHILOSOPHY
+======================================== */
+
+.philosophy-section {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    align-items: center;
+    gap: clamp(45px, 8vw, 105px);
+    padding-block: 115px;
+}
+
+.philosophy-image img {
+    aspect-ratio: 0.85;
+}
+
+.philosophy-content .eyebrow {
+    margin-bottom: 22px;
+}
+
+.philosophy-content h2 {
+    margin-bottom: 23px;
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+}
+
+.philosophy-content > p:not(.eyebrow) {
+    color: var(--color-muted);
+    font-size: 0.92rem;
+    line-height: 1.9;
+}
+
+.approach-list {
+    margin-top: 35px;
+}
+
+.approach-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding-block: 22px;
+    border-top: 1px solid var(--color-border);
+}
+
+.approach-list li > span {
+    color: var(--color-accent);
+    font-size: 0.8rem;
+    padding-top: 3px;
+}
+
+.approach-list h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.approach-list p {
+    color: var(--color-muted);
+    font-size: 0.83rem;
+}
+
+
+/* ========================================
+   PERSONAL INSPIRATION
+======================================== */
+
+.personal-section {
+    background: var(--color-surface);
+    padding-block: 100px;
+    text-align: center;
+}
+
+.personal-content {
+    max-width: 780px;
+}
+
+.personal-content .eyebrow {
+    margin-bottom: 22px;
+}
+
+.personal-content h2 {
+    margin-bottom: 24px;
+}
+
+.personal-content > p:last-child {
+    max-width: 580px;
+    margin-inline: auto;
+    color: var(--color-muted);
+    font-size: 0.94rem;
+    line-height: 1.9;
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 900px) {
+    .about-hero {
+        gap: 45px;
+        padding-block: 70px 85px;
+    }
+
+    .about-hero-content h1 {
+        font-size: clamp(2.8rem, 6vw, 4rem);
+    }
+
+    .story-layout {
+        gap: 45px;
+    }
+
+    .philosophy-section {
+        gap: 45px;
+        padding-block: 85px;
+    }
+}
+
+@media (max-width: 650px) {
+    .about-hero {
+        grid-template-columns: 1fr;
+        gap: 42px;
+        padding-block: 60px 75px;
+    }
+
+    .about-hero-content h1 {
+        font-size: clamp(3rem, 11vw, 4rem);
+    }
+
+    .about-hero-image img {
+        aspect-ratio: 0.9;
+    }
+
+    .story-section {
+        padding-block: 75px;
+    }
+
+    .story-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .story-heading h2 {
+        font-size: 2.8rem;
+    }
+
+    .philosophy-section {
+        grid-template-columns: 1fr;
+        gap: 38px;
+        padding-block: 75px;
+    }
+
+    .philosophy-image img {
+        aspect-ratio: 0.95;
+    }
+
+    .philosophy-content h2 {
+        font-size: 2.7rem;
+    }
+
+    .personal-section {
+        padding-block: 75px;
+    }
+
+    .personal-content h2 {
+        font-size: 2.8rem;
+    }
+}

@@ -1,0 +1,194 @@
+/* ========================================
+   LANGUAGE SUPPORT (Persian / RTL + English / LTR)
+   Load this file LAST, after style.css and the page CSS.
+======================================== */
+
+
+/* ----------------------------------------
+   1. NO FLASH OF WRONG LANGUAGE
+   The page is hidden for a split second until lang.js
+   applies the saved language. If JavaScript ever fails,
+   the animation shows the page after 1.5 seconds anyway.
+---------------------------------------- */
+
+html.i18n-pending body {
+    opacity: 0;
+    animation: i18n-show 0s 1.5s forwards;
+}
+
+@keyframes i18n-show {
+    to { opacity: 1; }
+}
+
+
+/* ----------------------------------------
+   2. LANGUAGE BUTTON
+---------------------------------------- */
+
+.lang-toggle {
+    min-width: 44px;
+    height: 44px;
+    padding: 0 12px;
+    border: 1px solid var(--color-border);
+    background: transparent;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition),
+                color var(--transition),
+                border-color var(--transition);
+}
+
+.lang-toggle:hover {
+    background: var(--color-text);
+    border-color: var(--color-text);
+    color: white;
+}
+
+
+/* ----------------------------------------
+   3. PERSIAN FONT & TYPOGRAPHY
+   Persian letters connect, so letter-spacing must be 0
+   and italics / uppercase effects are turned off.
+---------------------------------------- */
+
+html[lang="fa"] {
+    --font-heading: "Vazirmatn", Tahoma, Arial, sans-serif;
+    --font-body: "Vazirmatn", Tahoma, Arial, sans-serif;
+}
+
+html[lang="fa"] body {
+    line-height: 1.95;
+}
+
+html[lang="fa"] h1,
+html[lang="fa"] h2,
+html[lang="fa"] h3,
+html[lang="fa"] .contact-hero h1,
+html[lang="fa"] .contact-details h2,
+html[lang="fa"] .contact-form-wrapper h2,
+html[lang="fa"] .services-note h3 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.5;
+}
+
+html[lang="fa"] .logo,
+html[lang="fa"] .eyebrow,
+html[lang="fa"] .image-caption,
+html[lang="fa"] .contact-item > span {
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+html[lang="fa"] em,
+html[lang="fa"] .photo-note {
+    font-style: normal;
+}
+
+html[lang="fa"] em {
+    font-weight: 600;
+}
+
+/* Persian glyphs look small at tiny sizes, so nudge a few up. */
+html[lang="fa"] .eyebrow          { font-size: 0.85rem; font-weight: 600; }
+html[lang="fa"] .nav-links a,
+html[lang="fa"] .nav-cta          { font-size: 0.92rem; }
+html[lang="fa"] .hero-location,
+html[lang="fa"] .gallery-count,
+html[lang="fa"] .form-note        { font-size: 0.86rem; }
+html[lang="fa"] .image-caption,
+html[lang="fa"] .social-links,
+html[lang="fa"] .footer-content > p { font-size: 0.84rem; }
+html[lang="fa"] .filter-button,
+html[lang="fa"] .gallery-item-caption { font-size: 0.9rem; }
+html[lang="fa"] .portfolio-card-info p,
+html[lang="fa"] .approach-list p  { font-size: 0.92rem; }
+html[lang="fa"] .photo-note       { font-size: 1.05rem; }
+
+
+/* ----------------------------------------
+   4. RTL LAYOUT FIXES
+   Flexbox and grid flip automatically.
+   These fix the places that used left / right.
+---------------------------------------- */
+
+html[dir="rtl"] .photo-note {
+    right: auto;
+    left: 0;
+}
+
+html[dir="rtl"] .hero-decoration {
+    right: auto;
+    left: -30px;
+}
+
+html[dir="rtl"] .hero-location span {
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+html[dir="rtl"] .gallery-item {
+    text-align: right;
+}
+
+/* Arrows ↗ point the other way in RTL (they become ↖). */
+html[dir="rtl"] .button span[aria-hidden="true"],
+html[dir="rtl"] .text-link span[aria-hidden="true"],
+html[dir="rtl"] .nav-cta span[aria-hidden="true"],
+html[dir="rtl"] .portfolio-card-info > span,
+html[dir="rtl"] .gallery-item-caption span[aria-hidden="true"],
+html[dir="rtl"] .submit-button span[aria-hidden="true"] {
+    display: inline-block;
+    transform: scaleX(-1);
+}
+
+/* Emails, usernames and links keep their natural direction. */
+.contact-item a {
+    unicode-bidi: plaintext;
+}
+
+.form-field input[type="email"],
+.form-field input[type="date"] {
+    direction: ltr;
+    text-align: start;
+}
+
+html[dir="rtl"] .form-field input[type="email"]::placeholder {
+    text-align: left;
+}
+
+/* The photo viewer keeps ← on the left and → on the right. */
+.lightbox {
+    direction: ltr;
+}
+
+
+/* ----------------------------------------
+   5. MOBILE
+---------------------------------------- */
+
+@media (max-width: 650px) {
+    .lang-toggle {
+        margin-inline-end: 10px;
+    }
+
+    html[dir="rtl"] .nav-cta {
+        margin-left: 10px;
+        margin-right: auto;
+    }
+
+    html[dir="rtl"] .hero-decoration {
+        right: auto;
+        left: -10px;
+    }
+}
+
+@media (max-width: 380px) {
+    .lang-toggle {
+        margin-inline-start: auto;
+    }
+}

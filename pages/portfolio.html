@@ -1,34 +1,36 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl" class="i18n-pending">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
+        data-i18n-content="port.desc"
         content="Explore a collection of portrait, nature, lifestyle, and event photography."
     >
 
-    <title>Portfolio | Bahare Gallery</title>
+    <title data-i18n="port.title">Portfolio | Bahare Gallery</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Vazirmatn:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     >
-
 
     <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
     <link rel="manifest" href="../images/site.webmanifest">
 
-
+    <!-- lang.css must be last -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/portfolio.css">
+    <link rel="stylesheet" href="../css/lang.css">
 
+    <!-- lang.js must come first -->
+    <script src="../js/lang.js" defer></script>
     <script src="../js/main.js" defer></script>
     <script src="../js/portfolio.js" defer></script>
 </head>
@@ -37,26 +39,31 @@
 
     <!-- HEADER -->
     <header class="site-header">
-        <nav class="navbar container" aria-label="Main navigation">
+        <nav class="navbar container" aria-label="Main navigation" data-i18n-aria="nav.aria">
 
-            <a href="../index.html" class="logo">
-                Bahare Gallery<span>.</span>
-            </a>
+            <a href="../index.html" class="logo" data-i18n="brand">Bahare Gallery<span>.</span></a>
 
             <ul class="nav-links" id="navigation-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="portfolio.html" aria-current="page" data-i18n="nav.portfolio">Portfolio</a></li>
+                <li><a href="about.html" data-i18n="nav.about">About</a></li>
+                <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
             </ul>
 
-            <a href="contact.html" class="nav-cta">
-                Let's Talk <span aria-hidden="true">↗</span>
-            </a>
+            <a href="contact.html" class="nav-cta" data-i18n="nav.talk">Let's Talk <span aria-hidden="true">↗</span></a>
+
+            <button
+                class="lang-toggle"
+                type="button"
+                data-i18n="lang.btn"
+                data-i18n-aria="lang.aria"
+                aria-label="Switch language"
+            >EN</button>
 
             <button
                 class="menu-toggle"
                 type="button"
+                data-i18n-aria="menu.open"
                 aria-label="Open navigation menu"
                 aria-expanded="false"
                 aria-controls="navigation-links"
@@ -73,14 +80,14 @@
 
         <!-- PORTFOLIO INTRO -->
         <section class="portfolio-hero container">
-            <p class="eyebrow">A COLLECTION OF MOMENTS</p>
+            <p class="eyebrow" data-i18n="port.eyebrow">A COLLECTION OF MOMENTS</p>
 
-            <h1>
+            <h1 data-i18n="port.h1">
                 The art of<br>
                 <em>seeing differently.</em>
             </h1>
 
-            <p>
+            <p data-i18n="port.p">
                 Every photograph holds a story. Explore the people,
                 places, and moments that have inspired my work.
             </p>
@@ -89,49 +96,48 @@
 
         <!-- GALLERY -->
         <section class="gallery-section container"
-                 aria-label="Photography gallery">
+                 aria-label="Photography gallery"
+                 data-i18n-aria="port.gallery.aria">
 
             <div class="gallery-toolbar">
 
-                <div class="gallery-filters" aria-label="Filter photographs">
+                <div class="gallery-filters"
+                     aria-label="Filter photographs"
+                     data-i18n-aria="port.filters.aria">
                     <button class="filter-button is-active"
                             type="button"
                             data-filter="all"
-                            aria-pressed="true">
-                        All work
-                    </button>
+                            aria-pressed="true"
+                            data-i18n="cat.all">All work</button>
 
                     <button class="filter-button"
                             type="button"
                             data-filter="portrait"
-                            aria-pressed="false">
-                        Portraits
-                    </button>
+                            aria-pressed="false"
+                            data-i18n="cat.portrait">Portraits</button>
 
                     <button class="filter-button"
                             type="button"
                             data-filter="nature"
-                            aria-pressed="false">
-                        Nature
-                    </button>
+                            aria-pressed="false"
+                            data-i18n="cat.nature">Nature</button>
 
                     <button class="filter-button"
                             type="button"
                             data-filter="lifestyle"
-                            aria-pressed="false">
-                        Lifestyle
-                    </button>
+                            aria-pressed="false"
+                            data-i18n="cat.lifestyle">Lifestyle</button>
 
                     <button class="filter-button"
                             type="button"
                             data-filter="events"
-                            aria-pressed="false">
-                        Events
-                    </button>
+                            aria-pressed="false"
+                            data-i18n="cat.events">Events</button>
                 </div>
 
                 <p class="gallery-count" aria-live="polite">
-                    <span id="visible-count">8</span> photographs
+                    <span id="visible-count">8</span>
+                    <span data-i18n="port.count">photographs</span>
                 </p>
 
             </div>
@@ -143,14 +149,15 @@
                         type="button"
                         data-category="portrait"
                         data-full="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1800&q=90"
-                        data-alt="Woman photographed in soft natural light"
-                        aria-label="View portrait photograph">
+                        aria-label="View portrait photograph"
+                        data-i18n-aria="port.g1.aria">
                     <img
                         src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
                         alt="Woman photographed in soft natural light"
+                        data-i18n-alt="port.g1.alt"
                         loading="lazy">
                     <span class="gallery-item-caption">
-                        <span>Portraits</span>
+                        <span data-i18n="cat.portrait">Portraits</span>
                         <span aria-hidden="true">↗</span>
                     </span>
                 </button>
@@ -160,14 +167,15 @@
                         type="button"
                         data-category="nature"
                         data-full="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1800&q=90"
-                        data-alt="Peaceful mountain landscape reflected in a lake"
-                        aria-label="View nature photograph">
+                        aria-label="View nature photograph"
+                        data-i18n-aria="port.g2.aria">
                     <img
                         src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80"
                         alt="Peaceful mountain landscape reflected in a lake"
+                        data-i18n-alt="port.g2.alt"
                         loading="lazy">
                     <span class="gallery-item-caption">
-                        <span>Nature</span>
+                        <span data-i18n="cat.nature">Nature</span>
                         <span aria-hidden="true">↗</span>
                     </span>
                 </button>
@@ -177,14 +185,15 @@
                         type="button"
                         data-category="lifestyle"
                         data-full="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=1800&q=90"
-                        data-alt="Friends sharing a joyful moment"
-                        aria-label="View lifestyle photograph">
+                        aria-label="View lifestyle photograph"
+                        data-i18n-aria="port.g3.aria">
                     <img
                         src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=80"
                         alt="Friends sharing a joyful moment"
+                        data-i18n-alt="port.g3.alt"
                         loading="lazy">
                     <span class="gallery-item-caption">
-                        <span>Lifestyle</span>
+                        <span data-i18n="cat.lifestyle">Lifestyle</span>
                         <span aria-hidden="true">↗</span>
                     </span>
                 </button>
@@ -194,14 +203,15 @@
                         type="button"
                         data-category="portrait"
                         data-full="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=1800&q=90"
-                        data-alt="Editorial portrait of a woman"
-                        aria-label="View editorial portrait">
+                        aria-label="View editorial portrait"
+                        data-i18n-aria="port.g4.aria">
                     <img
                         src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=800&q=80"
                         alt="Editorial portrait of a woman"
+                        data-i18n-alt="alt.editorial"
                         loading="lazy">
                     <span class="gallery-item-caption">
-                        <span>Portraits</span>
+                        <span data-i18n="cat.portrait">Portraits</span>
                         <span aria-hidden="true">↗</span>
                     </span>
                 </button>
@@ -211,14 +221,15 @@
                         type="button"
                         data-category="nature"
                         data-full="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1800&q=90"
-                        data-alt="Sunlight filtering through a green forest"
-                        aria-label="View forest photograph">
+                        aria-label="View forest photograph"
+                        data-i18n-aria="port.g5.aria">
                     <img
                         src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80"
                         alt="Sunlight filtering through a green forest"
+                        data-i18n-alt="port.g5.alt"
                         loading="lazy">
                     <span class="gallery-item-caption">
-                        <span>Nature</span>
+                        <span data-i18n="cat.nature">Nature</span>
                         <span aria-hidden="true">↗</span>
                     </span>
                 </button>
@@ -228,14 +239,15 @@
                         type="button"
                         data-category="events"
                         data-full="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=90"
-                        data-alt="Elegant wedding celebration details"
-                        aria-label="View event photograph">
+                        aria-label="View event photograph"
+                        data-i18n-aria="port.g6.aria">
                     <img
                         src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
                         alt="Elegant wedding celebration details"
+                        data-i18n-alt="port.g6.alt"
                         loading="lazy">
                     <span class="gallery-item-caption">
-                        <span>Events</span>
+                        <span data-i18n="cat.events">Events</span>
                         <span aria-hidden="true">↗</span>
                     </span>
                 </button>
@@ -245,14 +257,15 @@
                         type="button"
                         data-category="lifestyle"
                         data-full="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1800&q=90"
-                        data-alt="Natural lifestyle portrait"
-                        aria-label="View lifestyle portrait">
+                        aria-label="View lifestyle portrait"
+                        data-i18n-aria="port.g7.aria">
                     <img
                         src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80"
                         alt="Natural lifestyle portrait"
+                        data-i18n-alt="port.g7.alt"
                         loading="lazy">
                     <span class="gallery-item-caption">
-                        <span>Lifestyle</span>
+                        <span data-i18n="cat.lifestyle">Lifestyle</span>
                         <span aria-hidden="true">↗</span>
                     </span>
                 </button>
@@ -262,14 +275,15 @@
                         type="button"
                         data-category="nature"
                         data-full="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1800&q=90"
-                        data-alt="Wildlife in a natural landscape"
-                        aria-label="View wildlife photograph">
+                        aria-label="View wildlife photograph"
+                        data-i18n-aria="port.g8.aria">
                     <img
                         src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=800&q=80"
                         alt="Wildlife in a natural landscape"
+                        data-i18n-alt="port.g8.alt"
                         loading="lazy">
                     <span class="gallery-item-caption">
-                        <span>Nature</span>
+                        <span data-i18n="cat.nature">Nature</span>
                         <span aria-hidden="true">↗</span>
                     </span>
                 </button>
@@ -281,13 +295,15 @@
 
         <!-- LIGHTBOX -->
         <dialog class="lightbox" id="lightbox"
-                aria-label="Enlarged photograph">
+                aria-label="Enlarged photograph"
+                data-i18n-aria="port.lb.aria">
 
             <button
                 class="lightbox-close"
                 id="lightbox-close"
                 type="button"
-                aria-label="Close enlarged photograph">
+                aria-label="Close enlarged photograph"
+                data-i18n-aria="port.lb.close">
                 &times;
             </button>
 
@@ -295,7 +311,8 @@
                 class="lightbox-prev"
                 id="lightbox-prev"
                 type="button"
-                aria-label="Previous photograph">
+                aria-label="Previous photograph"
+                data-i18n-aria="port.lb.prev">
                 &#8592;
             </button>
 
@@ -308,7 +325,8 @@
                 class="lightbox-next"
                 id="lightbox-next"
                 type="button"
-                aria-label="Next photograph">
+                aria-label="Next photograph"
+                data-i18n-aria="port.lb.next">
                 &#8594;
             </button>
 
@@ -317,20 +335,18 @@
 
         <!-- CONTACT CTA -->
         <section class="contact-section container">
-            <p class="eyebrow">HAVE A PROJECT IN MIND?</p>
+            <p class="eyebrow" data-i18n="port.cta.eyebrow">HAVE A PROJECT IN MIND?</p>
 
-            <h2>
+            <h2 data-i18n="port.cta.h2">
                 Your story deserves<br>
                 <em>to be remembered.</em>
             </h2>
 
-            <p>
+            <p data-i18n="port.cta.p">
                 Let's talk about your ideas and create something meaningful.
             </p>
 
-            <a href="contact.html" class="button button-primary">
-                Get in Touch <span aria-hidden="true">↗</span>
-            </a>
+            <a href="contact.html" class="button button-primary" data-i18n="cta.touch">Get in Touch <span aria-hidden="true">↗</span></a>
         </section>
 
     </main>
@@ -340,25 +356,19 @@
     <footer class="site-footer">
         <div class="container footer-content">
 
-            <a href="../index.html" class="logo">
-                Bahare Gallery<span>.</span>
-            </a>
+            <a href="../index.html" class="logo" data-i18n="brand">Bahare Gallery<span>.</span></a>
 
-            <p>Creating photographs, preserving feelings.</p>
+            <p data-i18n="footer.tagline">Creating photographs, preserving feelings.</p>
 
-            <div class="social-links">
+            <div class="social-links" aria-label="Social media" data-i18n-aria="footer.social">
                 <a href="https://www.instagram.com/"
                    target="_blank"
-                   rel="noopener noreferrer">
-                    Instagram
-                </a>
-                <a href="contact.html">Contact</a>
+                   rel="noopener noreferrer"
+                   data-i18n="footer.instagram">Instagram</a>
+                <a href="contact.html" data-i18n="footer.contact">Contact</a>
             </div>
 
-            <p class="copyright">
-                &copy; <span id="current-year">2026</span> Bahare Gallery.
-                All rights reserved.
-            </p>
+            <p class="copyright" data-i18n="footer.rights">&copy; <span id="current-year">2026</span> Bahare Gallery. All rights reserved.</p>
 
         </div>
     </footer>

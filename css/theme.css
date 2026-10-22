@@ -1,0 +1,168 @@
+/* ========================================
+   THEME: LIGHT / DARK MODE
+   Load this file LAST (after lang.css).
+
+   TO CHANGE THE DARK COLOURS: edit the values in
+   section 1. To change the light colours, edit the
+   variables at the top of style.css.
+======================================== */
+
+
+/* ----------------------------------------
+   1. DARK COLOURS
+---------------------------------------- */
+
+html[data-theme="light"] {
+    color-scheme: light;
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+
+    --color-bg: #161512;
+    --color-surface: #1f1d19;
+    --color-text: #efebe3;
+    --color-muted: #a39f94;
+    --color-accent: #d08f6c;
+    --color-border: #34312b;
+}
+
+/* Avoid a bright flash while the page loads for dark-mode devices. */
+@media (prefers-color-scheme: dark) {
+    html.i18n-pending:not([data-theme="light"]) {
+        background: #161512;
+    }
+}
+
+
+/* ----------------------------------------
+   2. PLACES WHERE THE ORIGINAL CSS USED
+      FIXED COLOURS (white text, light glass, etc.)
+---------------------------------------- */
+
+html[data-theme="dark"] .site-header {
+    background: rgb(22 21 18 / 92%);
+    border-bottom-color: rgb(52 49 43 / 70%);
+}
+
+/* Buttons that were "dark with white text" become
+   "light with dark text". */
+html[data-theme="dark"] .button-primary,
+html[data-theme="dark"] .submit-button,
+html[data-theme="dark"] .filter-button.is-active {
+    color: var(--color-bg);
+}
+
+html[data-theme="dark"] .button-outline:hover,
+html[data-theme="dark"] .lang-toggle:hover,
+html[data-theme="dark"] .theme-toggle:hover {
+    color: var(--color-bg);
+}
+
+html[data-theme="dark"] .submit-button:hover {
+    color: var(--color-text);
+}
+
+html[data-theme="dark"] .contact-form-wrapper {
+    background: rgb(255 255 255 / 3%);
+}
+
+
+/* ----------------------------------------
+   3. THEME BUTTON
+---------------------------------------- */
+
+.theme-toggle {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--color-border);
+    background: transparent;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: background var(--transition),
+                color var(--transition),
+                border-color var(--transition);
+}
+
+.theme-toggle:hover {
+    background: var(--color-text);
+    border-color: var(--color-text);
+    color: var(--color-bg);
+}
+
+.theme-toggle svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Light mode shows the moon (click = go dark).
+   Dark mode shows the sun (click = go light). */
+.theme-toggle .icon-sun {
+    display: none;
+}
+
+html[data-theme="dark"] .theme-toggle .icon-sun {
+    display: block;
+}
+
+html[data-theme="dark"] .theme-toggle .icon-moon {
+    display: none;
+}
+
+/* Bring the two small buttons a little closer on desktop. */
+.lang-toggle + .theme-toggle {
+    margin-inline-start: -14px;
+}
+
+
+/* ----------------------------------------
+   4. SMOOTH COLOUR CHANGE WHEN TOGGLING
+   (theme.js adds this class for a split second)
+---------------------------------------- */
+
+html.theme-animating *,
+html.theme-animating *::before,
+html.theme-animating *::after {
+    transition: background-color 300ms ease,
+                color 300ms ease,
+                border-color 300ms ease !important;
+}
+
+
+/* ----------------------------------------
+   5. MOBILE
+---------------------------------------- */
+
+@media (max-width: 650px) {
+    .lang-toggle + .theme-toggle {
+        margin-inline-start: 0;
+    }
+
+    .theme-toggle {
+        margin-inline-end: 10px;
+    }
+}
+
+/* On narrow phones, hide the small "Let's Talk" link so the
+   three buttons fit on one line. Contact is still in the menu. */
+@media (max-width: 440px) {
+    .nav-cta {
+        display: none;
+    }
+
+    .lang-toggle {
+        margin-inline-start: auto;
+    }
+
+    .lang-toggle,
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        padding: 0;
+    }
+}

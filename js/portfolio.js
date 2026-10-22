@@ -1,4 +1,3 @@
-
 /* ========================================
    1. CATEGORY FILTERING
 ======================================== */
@@ -62,6 +61,13 @@ const nextButton = document.querySelector("#lightbox-next");
 let currentIndex = 0;
 let previousFocus = null;
 
+// Translated category name (falls back to the English value).
+function categoryName(category) {
+    return window.i18n
+        ? window.i18n.t("cat." + category)
+        : category;
+}
+
 function getVisibleItems() {
     return galleryItems.filter((item) => !item.hidden);
 }
@@ -79,11 +85,11 @@ function showImage(index) {
     const thumbnail = item.querySelector("img");
 
     lightboxImage.src = item.dataset.full || thumbnail.src;
-    lightboxImage.alt = item.dataset.alt || thumbnail.alt;
+    lightboxImage.alt = thumbnail.alt;
 
     lightboxCaption.textContent =
         `${currentIndex + 1} / ${visibleItems.length} — ` +
-        item.dataset.category;
+        categoryName(item.dataset.category);
 }
 
 function openLightbox(item) {
@@ -150,5 +156,12 @@ document.addEventListener("keydown", (event) => {
 
     if (event.key === "ArrowRight") {
         showImage(currentIndex + 1);
+    }
+});
+
+// Refresh the caption / alt text if the language changes while open.
+document.addEventListener("i18n:change", () => {
+    if (lightbox.open) {
+        showImage(currentIndex);
     }
 });
